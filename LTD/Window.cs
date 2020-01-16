@@ -26,7 +26,7 @@ namespace LTD
             while (window.IsOpen)
             {
                 window.DispatchEvents();
-
+                
                 gameManager.RunGame(window);
 
                 window.Display();

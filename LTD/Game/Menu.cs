@@ -4,13 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using SFML.Graphics;
+using SFML.System;
+
 namespace LTD.Game
 {
     public class Menu
     {
-        public void HandleMenu(SFML.Window.Window window)
+        Text text = new Text("Menu", LTD.Config.FontsManager.roboto);
+
+        public Menu() // once at start
         {
-            Console.WriteLine("We are in menu!");
+            text.Color = Color.White;
+            text.Position = new Vector2f(50, 50);
+        }
+
+        public void HandleMenu(RenderWindow window) // every frame
+        {
+            window.Draw(text);
         }
     }
 }

@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\ConfigStore.cs" />
+    <Compile Include="Config\FontsManager.cs" />
     <Compile Include="Game\Game.cs" />
     <Compile Include="Game\Menu.cs" />
     <Compile Include="Program.cs" />

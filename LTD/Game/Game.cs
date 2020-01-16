@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using SFML.System;
+using SFML.Window;
+using SFML.Graphics;
+
 namespace LTD.Game
 {
     class GameManager
@@ -23,7 +27,7 @@ namespace LTD.Game
         }
 
         public GameState CurrentGameState;
-        public void RunGame(SFML.Window.Window window)
+        public void RunGame(RenderWindow window)
         {
 
             switch(CurrentGameState)
