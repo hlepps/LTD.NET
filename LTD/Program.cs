@@ -24,7 +24,7 @@ namespace LTD
         public void Run()
         {
             var mode = new SFML.Window.VideoMode(800, 600);
-            var window = new SFML.Graphics.RenderWindow(mode, "LTD");
+            var window = new SFML.Graphics.RenderWindow(mode, "Elo Bubnik Here");
             window.KeyPressed += Window_KeyPressed;
 
             var circle = new SFML.Graphics.CircleShape(100f)
