@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.IO;
+
+using Newtonsoft.Json;
+
 using SFML.System;
 using SFML.Window;
 using SFML.Graphics;
@@ -15,6 +19,8 @@ namespace LTD
         static void Main(string[] args)
         {
             var window = new SimpleWindow();
+            
+
             window.Run();
         }
     }
@@ -23,7 +29,8 @@ namespace LTD
     {
         public void Run()
         {
-            var mode = new SFML.Window.VideoMode(800, 600);
+            Config.ConfigStore conf = Config.ConfigStore.LoadConfig();
+            var mode = new SFML.Window.VideoMode((uint)conf.screenWidth, (uint)conf.screenHeight);
             var window = new SFML.Graphics.RenderWindow(mode, "LTD Engine");
             window.KeyPressed += Window_KeyPressed;
 

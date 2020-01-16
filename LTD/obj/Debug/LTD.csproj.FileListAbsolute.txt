@@ -224,3 +224,13 @@ C:\Users\kuba7\Documents\GitHub\LTD.NET\LTD\obj\Debug\LTD.csproj.CoreCompileInpu
 C:\Users\kuba7\Documents\GitHub\LTD.NET\LTD\obj\Debug\LTD.csproj.CopyComplete
 C:\Users\kuba7\Documents\GitHub\LTD.NET\LTD\obj\Debug\LTD.exe
 C:\Users\kuba7\Documents\GitHub\LTD.NET\LTD\obj\Debug\LTD.pdb
+C:\Users\HP\Documents\GitHub\LTD.NET\LTD\bin\Debug\lua53.dll
+C:\Users\HP\Documents\GitHub\LTD.NET\LTD\bin\Debug\liblua53.dylib
+C:\Users\HP\Documents\GitHub\LTD.NET\LTD\bin\Debug\x86\lua53.dll
+C:\Users\HP\Documents\GitHub\LTD.NET\LTD\bin\Debug\x64\lua53.dll
+C:\Users\HP\Documents\GitHub\LTD.NET\LTD\bin\Debug\x64\liblua53.so
+C:\Users\HP\Documents\GitHub\LTD.NET\LTD\bin\Debug\KeraLua.dll
+C:\Users\HP\Documents\GitHub\LTD.NET\LTD\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HP\Documents\GitHub\LTD.NET\LTD\bin\Debug\NLua.dll
+C:\Users\HP\Documents\GitHub\LTD.NET\LTD\bin\Debug\KeraLua.xml
+C:\Users\HP\Documents\GitHub\LTD.NET\LTD\bin\Debug\Newtonsoft.Json.xml
