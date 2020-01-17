@@ -10,8 +10,9 @@ using SFML.Graphics;
 
 namespace LTD.Game
 {
-    class GameManager
+    public class GameManager
     {
+        public Window currentWindow;
         public enum GameState
         {
             MENU, // - default
@@ -24,12 +25,13 @@ namespace LTD.Game
         public GameManager()
         {
             menu = new Menu();
+            Engine.gameManager = this;
         }
 
         public GameState CurrentGameState;
-        public void RunGame(RenderWindow window)
+        public void RunGame(Window window)
         {
-
+            currentWindow = window;
             switch(CurrentGameState)
             {
                 case GameState.MENU:

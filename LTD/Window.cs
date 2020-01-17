@@ -12,24 +12,32 @@ using LTD.Game;
 
 namespace LTD
 {
-    class Window
+    public class Window
     {
+        public static Clock clock;
+        public RenderWindow renderWindow;
+
+        public Window()
+        {
+            var mode = new SFML.Window.VideoMode((uint)Engine.conf.screenWidth, (uint)Engine.conf.screenHeight);
+            renderWindow = new SFML.Graphics.RenderWindow(mode, "LTD", Styles.Close);
+        }
         public void Run()
         {
-            Config.ConfigStore conf = Config.ConfigStore.LoadConfig();
-            var mode = new SFML.Window.VideoMode((uint)conf.screenWidth, (uint)conf.screenHeight);
-            var window = new SFML.Graphics.RenderWindow(mode, "LTD");
-            window.KeyPressed += Window_KeyPressed;
+            renderWindow.KeyPressed += Window_KeyPressed;
 
             GameManager gameManager = new GameManager();
             
-            while (window.IsOpen)
+            while (renderWindow.IsOpen)
             {
-                window.DispatchEvents();
+                clock = new Clock();
+                renderWindow.Clear();
+                renderWindow.DispatchEvents();
                 
-                gameManager.RunGame(window);
+                gameManager.RunGame(this);
 
-                window.Display();
+                renderWindow.Display();
+                clock.Restart();
             }
         }
         private void Window_KeyPressed(object sender, SFML.Window.KeyEventArgs e)
