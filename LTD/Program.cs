@@ -18,6 +18,7 @@ namespace LTD
         public static Config.ConfigStore conf = Config.ConfigStore.LoadConfig();
         public static Graphics.TextureManager textureManager = new Graphics.TextureManager();
         public static LTD.Game.GameManager gameManager;
+        public static LTD.Config.FontsManager fontsManager = new Config.FontsManager();
 
         static void Main(string[] args)
         {

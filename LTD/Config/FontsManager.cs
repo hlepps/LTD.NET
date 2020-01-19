@@ -8,8 +8,8 @@ using SFML.Graphics;
 
 namespace LTD.Config
 {
-    class FontsManager
+    public class FontsManager
     {
-        public static Font roboto = new Font("fonts\\Roboto-Regular.ttf");
+        public Font roboto = new Font("fonts\\Roboto-Regular.ttf");
     }
 }

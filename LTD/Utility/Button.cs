@@ -13,6 +13,9 @@ namespace LTD.Utility
         public SFML.Graphics.Texture normalTXT, highlightedTXT, pressedTXT;
         public bool disabled;
 
+        public string text;
+
+        SFML.Graphics.Text sfmlText;
         bool pressed;
         bool wait;
 
@@ -20,8 +23,12 @@ namespace LTD.Utility
 
         
 
-        public Button(SFML.System.Vector2f position, SFML.Graphics.Texture normal, SFML.Graphics.Texture highlighted, SFML.Graphics.Texture pressed)
+        public Button(string textToShow, SFML.Graphics.Font font, SFML.System.Vector2f position, SFML.Graphics.Texture normal, SFML.Graphics.Texture highlighted, SFML.Graphics.Texture pressed)
         {
+            text = textToShow;
+            sfmlText = new SFML.Graphics.Text(text, font);
+            sfmlText.OutlineThickness = 1;
+            sfmlText.OutlineColor = SFML.Graphics.Color.Black;
             normalTXT = normal;
             highlightedTXT = highlighted;
             pressedTXT = pressed;
@@ -30,11 +37,32 @@ namespace LTD.Utility
             sprite.Position = position;
         }
 
+        public void SetPosition(SFML.System.Vector2f pos)
+        {
+            sprite.Position = pos;
+        }
+
+        public SFML.System.Vector2f GetPosition()
+        {
+            return sprite.Position;
+        }
+
+        public SFML.Graphics.FloatRect GetGlobalBounds()
+        {
+            return sprite.GetGlobalBounds();
+        }
+
+        public SFML.Graphics.FloatRect GetLocalBounds()
+        {
+            return sprite.GetLocalBounds();
+        }
+
 
         public bool Pressed()
         {
             SFML.System.Vector2i mousePos = SFML.Window.Mouse.GetPosition(Engine.gameManager.currentWindow.renderWindow);
-
+            
+            sfmlText.Position = sprite.Position + new SFML.System.Vector2f(sprite.GetGlobalBounds().Width / 2 - sfmlText.GetGlobalBounds().Width / 2, sprite.GetGlobalBounds().Height / 2 - sfmlText.GetGlobalBounds().Height / 2 * 1.5f);
             
 
             if(sprite.GetGlobalBounds().Contains(mousePos.X, mousePos.Y))
@@ -71,6 +99,7 @@ namespace LTD.Utility
         public void Draw(SFML.Graphics.RenderWindow window)
         {
             window.Draw(sprite);
+            window.Draw(sfmlText);
         }
 
     }
